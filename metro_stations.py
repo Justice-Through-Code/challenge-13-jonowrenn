@@ -1,7 +1,6 @@
-"""
-NYC Transit Challenge!
-Use OOP and inheritance to design subway and bus stations.
-"""
+# """NYC Transit Challenge!
+# Use OOP and inheritance to design subway and bus stations.
+# """
 """
 DO NOT EDIT THE MetroStation CLASS
 """
@@ -11,7 +10,7 @@ class MetroStation:
     All metro stations have a name, a location, and default to being open.
     All metro stations must be able to open, close, and show their info.
     """
-    def init(self, station_name, location):
+    def __init__(self, station_name, location):
         self.station_name = station_name
         self.location = location
         self.is_open = True
@@ -32,7 +31,7 @@ class MetroStation:
 #       This will indicate which subway lines stop at the station (for example ['A', 'C'])
 #   - Override the show_info() method from MetroStation to display which subway lines stop there, in addition to the station_name and location
 class SubwayStation(MetroStation):
-    def init(self, station_name, location, lines: list):
+    def __init__(self, station_name, location, lines: list):
         super().init(station_name, location)
         self.lines = lines
     def show_info(self):
@@ -59,7 +58,7 @@ subway_station.show_info()
 # - Override the show_info() method to display the bus routes in addition to the station name and location
 #   (NOTE: This means that the code in MetroStation.show_info() should still run in the SubwayStation code)
 class BusStation(MetroStation):
-    def init(self, station_name, location, routes: list):
+    def __init__(self, station_name, location, routes):
         super().init(station_name, location)
         self.routes = routes
     def add_route(self, route: str):
