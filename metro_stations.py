@@ -32,7 +32,7 @@ class MetroStation:
 #   - Override the show_info() method from MetroStation to display which subway lines stop there, in addition to the station_name and location
 class SubwayStation(MetroStation):
     def __init__(self, station_name, location, lines: list):
-        super().init(station_name, location)
+        super().__init__(station_name, location)
         self.lines = lines
     def show_info(self):
         """Display the current info about the station"""
@@ -59,7 +59,7 @@ subway_station.show_info()
 #   (NOTE: This means that the code in MetroStation.show_info() should still run in the SubwayStation code)
 class BusStation(MetroStation):
     def __init__(self, station_name, location, routes):
-        super().init(station_name, location)
+        super().__init__(station_name, location)
         self.routes = routes
     def add_route(self, route: str):
         self.routes.append(route)
